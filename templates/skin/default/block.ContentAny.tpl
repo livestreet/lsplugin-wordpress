@@ -1,4 +1,4 @@
 <div class="block">
-	{$wp_sContentAnyTitle}<br />
-	{$wp_sContentAny}<br />
+	<h2>{$wp_sContentAnyTitle}</h2>
+	{$wp_sContentAny}
 </div>

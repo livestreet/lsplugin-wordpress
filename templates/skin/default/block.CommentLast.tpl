@@ -14,4 +14,8 @@
 			</li>			
 		{/foreach}
 	</ul>
+	
+	<div class="bottom">
+		<a href="{router page='comments'}" class="all-comments">{$aLang.block_stream_comments_all}</a>
+	</div>
 </div>
