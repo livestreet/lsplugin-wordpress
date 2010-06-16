@@ -20,7 +20,8 @@ class PluginWordpress_HookWp extends Hook {
     public function RegisterHook() {
         $this->AddHook('init_action', 'InitAction');
         $this->AddHook('module_topic_updatetopic_before', 'UpdateTopic');
-        $this->AddHook('module_topic_addtopic_after', 'AddTopic');        
+        $this->AddHook('module_topic_addtopic_after', 'AddTopic');
+        $this->AddHook('template_main_menu_tree','MenuTree');
     }
 
     public function InitAction() {    	
@@ -54,5 +55,11 @@ class PluginWordpress_HookWp extends Hook {
     		$this->PluginWordpress_Wp_UpdateTopicUrl($oTopic);
     	}    	
     }    
+    
+    public function MenuTree() {
+    	$aPages=$this->PluginPage_Page_GetPages(array('main'=>1,'active'=>1));		
+		$this->Viewer_Assign('aPagesMain',$aPages);
+		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'main_menu.tpl');
+    }
 }
 ?>
