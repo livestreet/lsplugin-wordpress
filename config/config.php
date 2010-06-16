@@ -52,5 +52,6 @@ $config['archive']['per_page']   = 10;  // число топиков на стр
  */
 Config::Set('block', array());
 
+
 return $config;
 ?>

@@ -52,6 +52,24 @@ class PluginWordpress extends Plugin {
 		$this->Viewer_AddBlock('right','ContentAny',array('plugin'=>'wordpress','id'=>'test'),1);
 		$this->Viewer_AddBlock('right','Archive',array('plugin'=>'wordpress'),1);
 		$this->Viewer_AddBlock('right','Calendar',array('plugin'=>'wordpress'),1);
+		
+		
+		
+		$aPaths=glob(Plugin::GetPath(__CLASS__).'templates/skin/*',GLOB_ONLYDIR);		
+		/**
+		 * Подключает файл оформления дефолтного стиля
+		 */
+		if (!($aPaths and in_array(Config::Get('view.skin'),array_map('basename',$aPaths)))) {
+			Config::Set('head.rules.wpblockstyle', array(
+				'path'=>'.+',
+				'css' => array(
+					'include' => array(
+						Plugin::GetTemplateWebPath(__CLASS__)."css/style.css",
+					)
+				),
+			));
+		}
+		
 	}
 }
 ?>
