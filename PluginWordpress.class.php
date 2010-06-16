@@ -42,6 +42,7 @@ class PluginWordpress extends Plugin {
 	public function Init() {
 		//$this->Viewer_ClearBlocks('right');
 		
+		$this->Viewer_AddBlock('right','Meta',array('plugin'=>'wordpress'),10);
 		$this->Viewer_AddBlock('right','TopicPopular',array('plugin'=>'wordpress'),1);
 		$this->Viewer_AddBlock('right','TopicLast',array('plugin'=>'wordpress'),1);
 		$this->Viewer_AddBlock('right','Blogs',array('plugin'=>'wordpress'),1);

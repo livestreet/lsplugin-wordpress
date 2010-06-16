@@ -24,6 +24,7 @@ $config['table']['topic'] = '___db.table.prefix___wp_topic';
  * Роутинг
  */
 Config::Set('router.page.archive', 'PluginWordpress_ActionArchive');
+Config::Set('router.page.contentany', 'PluginWordpress_ActionContent');
 
 /**
  * Настройки блоков

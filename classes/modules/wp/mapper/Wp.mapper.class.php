@@ -77,6 +77,21 @@ class PluginWordpress_ModuleWp_MapperWp extends Mapper {
 		return null;
 	}
 	
+	public function GetContents() {				
+		$sql = "SELECT 
+					*							 
+				FROM 
+					".Config::Get('plugin.wordpress.table.content')." 				 									
+				ORDER BY name ";
+		$aCollection=array();
+		if ($aRows=$this->oDb->select($sql)) {
+			foreach ($aRows as $aRow) {
+				$aCollection[]=Engine::GetEntity('PluginWordpress_Wp_Content',$aRow);
+			}
+		}		
+		return $aCollection;
+	}
+	
 	public function GetTopicByDateAndTitleLat($sDate,$sTitle) {
 		$sql = "SELECT id FROM ".Config::Get('plugin.wordpress.table.topic')." WHERE date = ? and title_lat = ? limit 0,1";
 		if ($aRow=$this->oDb->selectRow($sql,$sDate,$sTitle)) {

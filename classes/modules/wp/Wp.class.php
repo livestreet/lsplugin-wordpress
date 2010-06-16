@@ -74,6 +74,14 @@ class PluginWordpress_ModuleWp extends Module {
 		return $this->oMapper->GetContentByName($sName);
 	}
 	/**
+	 * Получает весь список контента
+	 *
+	 * @return array
+	 */
+	public function GetContents() {
+		return $this->oMapper->GetContents();
+	}
+	/**
 	 * Получает топик по его латинсокму названиею и дате
 	 *
 	 * @param string $sDate (Y-m-d)

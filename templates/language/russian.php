@@ -19,6 +19,7 @@
  * Русский языковой файл плагина
  */
 return array(
+	'wordpress_block_meta' => 'Meta',
 	'wordpress_block_topic_popular' => 'Популярные записи',
 	'wordpress_block_topic_last' => 'Последние записи',
 	'wordpress_block_blogs' => 'Категории',
@@ -36,6 +37,23 @@ return array(
 	'wordpress_block_archive_year' => 'Архив за год',
 	'wordpress_block_archive_month' => 'Архив за месяц',
 	'wordpress_block_archive_day' => 'Архив за день',
+	
+	'wordpress_content' => 'Произвольные блоки контента',
+	'wordpress_content_field_id' => 'id',
+	'wordpress_content_field_name' => 'Название',
+	'wordpress_content_field_title' => 'Заголовок',
+	'wordpress_content_field_php' => 'PHP',
+	'wordpress_content_field_content' => 'Контент',
+	'wordpress_content_field_is_php' => 'PHP код',
+	'wordpress_content_action' => 'Действие',
+	'wordpress_content_action_edit' => 'Редактировать',
+	'wordpress_content_action_delete' => 'Удалить',
+	'wordpress_content_action_delete_confirm' => 'действительно удалить?',
+	'wordpress_content_action_add' => 'Добавить',
+	'wordpress_content_action_add_title' => 'Добавление контента',
+	'wordpress_content_action_edit_title' => 'Редактирование контента',
+	'wordpress_content_submit_save' => 'Сохранить',
+	'wordpress_content_submit_cancel' => 'Отмена',
 	
 	
 );
