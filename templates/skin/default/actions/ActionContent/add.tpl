@@ -9,12 +9,12 @@
 											
 	<label for="content_content">{$aLang.wordpress_content_field_content}:</label>
 	<div class="panel-form">       	 
-		<a href="#" onclick="lsPanel.putTagAround('content_content','b'); return false;" class="button"><img src="{cfg name='path.static.skin'}/images/panel/bold_ru.gif" width="20" height="20" title="{$aLang.panel_b}"></a>
-		<a href="#" onclick="lsPanel.putTagAround('content_content','i'); return false;" class="button"><img src="{cfg name='path.static.skin'}/images/panel/italic_ru.gif" width="20" height="20" title="{$aLang.panel_i}"></a>	 			
-		<a href="#" onclick="lsPanel.putTagAround('content_content','u'); return false;" class="button"><img src="{cfg name='path.static.skin'}/images/panel/underline_ru.gif" width="20" height="20" title="{$aLang.panel_u}"></a>	 			
-		<a href="#" onclick="lsPanel.putTagAround('content_content','s'); return false;" class="button"><img src="{cfg name='path.static.skin'}/images/panel/strikethrough.gif" width="20" height="20" title="{$aLang.panel_s}"></a>	 			
+		<a href="#" onclick="lsPanel.putTagAround('content_content','b'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/bold_ru.gif" width="20" height="20" title="{$aLang.panel_b}"></a>
+		<a href="#" onclick="lsPanel.putTagAround('content_content','i'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/italic_ru.gif" width="20" height="20" title="{$aLang.panel_i}"></a>	 			
+		<a href="#" onclick="lsPanel.putTagAround('content_content','u'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/underline_ru.gif" width="20" height="20" title="{$aLang.panel_u}"></a>	 			
+		<a href="#" onclick="lsPanel.putTagAround('content_content','s'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/strikethrough.gif" width="20" height="20" title="{$aLang.panel_s}"></a>	 			
 		&nbsp;
-		<a href="#" onclick="lsPanel.putTagUrl('content_content','URL'); return false;" class="button"><img src="{cfg name='path.static.skin'}/images/panel/link.gif" width="20" height="20"  title="{$aLang.panel_url}"></a>
+		<a href="#" onclick="lsPanel.putTagUrl('content_content','URL'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/link.gif" width="20" height="20"  title="{$aLang.panel_url}"></a>
 	</div>
 	
 	<textarea name="content_content" id="content_content" rows="20" class="input-wide">{$_aRequest.content_content}</textarea>

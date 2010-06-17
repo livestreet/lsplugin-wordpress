@@ -39,6 +39,13 @@
 .block .cloud li a.w9 { font-size: 22px; }
 .block .cloud li a.w10 { font-size: 22px; }
 
+.table a { color: #333; }
+.table a:hover { color: #666; }
+
+.table { width: 100%; margin-bottom: 10px; }
+.table thead td { background: #fafafa; }
+.table td { border: 1px solid #ddd; padding: 5px; }
+
 .page-new { padding-left: 13px; background: url(../images/document.gif) no-repeat 0 3px; color: #555; }
 
 .input-wide { width: 98%; _width: 97%; padding: 2px; }
