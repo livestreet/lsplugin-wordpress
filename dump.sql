@@ -7,10 +7,7 @@ CREATE TABLE `prefix_wp_content` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `is_php` (`is_php`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
-
-INSERT INTO `prefix_wp_content` VALUES (1, 'test', 'тестовый блок', 1, 'echo("bugaga");\r\nif (1) {\r\necho("ok!");\r\n}');   
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE `prefix_wp_topic` (
   `id` int(11) NOT NULL,
