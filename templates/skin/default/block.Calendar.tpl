@@ -36,7 +36,11 @@
 		
 		<tfoot>
 			<tr>
-				<td colspan="3"><a href="{router page='archive'}{date_format format="Y" date=$wp_aCalendar.prev}/{date_format format="m" date=$wp_aCalendar.prev}/">« {date_format format="F" declination=0 date=$wp_aCalendar.prev}</a></td>
+				<td colspan="3">
+					{if $wp_aCalendar.prev}
+						<a href="{router page='archive'}{date_format format="Y" date=$wp_aCalendar.prev}/{date_format format="m" date=$wp_aCalendar.prev}/">« {date_format format="F" declination=0 date=$wp_aCalendar.prev}</a>
+					{/if}
+				</td>
 				<td>&nbsp;</td>
 				<td colspan="3" style="text-align: right">
 					{if $wp_aCalendar.next}

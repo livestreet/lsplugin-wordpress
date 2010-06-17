@@ -35,8 +35,15 @@ class PluginWordpress_BlockCalendar extends Block {
 		
 		/**
 		 * Определяем предыдущую и следующую даты в календаре
-		 */
-		$sDatePrev=date("Y-m-d H:i:s",mktime(0,0,0,date("m",$iDate)-1,1,date("Y",$iDate)));
+		 */		
+		$sDatePrev=null;
+		if ($oTopicFirst=$this->PluginWordpress_Wp_GetFirstTopic()) {
+			$iDateFirst=strtotime($oTopicFirst->getDateAdd());
+			if (mktime(0,0,0,date("m",$iDate)-1,1,date("Y",$iDate))>=mktime(0,0,0,date("m",$iDateFirst),1,date("Y",$iDateFirst))) {
+				$sDatePrev=date("Y-m-d H:i:s",mktime(0,0,0,date("m",$iDate)-1,1,date("Y",$iDate)));
+			}
+		}
+		
 		if (mktime(0,0,0,date("m",$iDate)+1,1,date("Y",$iDate))<=mktime(0,0,0,date("m"),1,date("Y"))) {
 			$sDateNext=date("Y-m-d H:i:s",mktime(0,0,0,date("m",$iDate)+1,1,date("Y",$iDate)));
 		} else {
