@@ -2,7 +2,7 @@
 .block .calender thead { font-size: 11px; color: #666; }
 .block .calender tbody { color: #aaa; }
 .block .calender tbody td { background: #f5f5f5; border: 1px solid #fff; padding: 3px 0 2px; text-align: center; }
-.block .calender tbody td.empty { background: #fafafa; }
+.block .calender tbody td.empty { background: #fff; }
 
 .block ul { margin-left: 15px; list-style: square; color: #666; }
 .block ul a { font: 12px Georgia, serif; text-decoration: none; }
@@ -12,3 +12,38 @@
 
 .block .bottom { margin-top: 5px; }
 .block .bottom a { margin-left: 15px; font: 12px Georgia, serif; color: #390; }
+
+.block.search .input-submit { color: #333; }
+.block.search .input-text {
+	-moz-box-shadow: 1px 1px 1px #ddd inset;
+	-webkit-box-shadow: 1px 1px 1px #aaa inset;
+	box-shadow: 1px 1px 1px #aaa inset;
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	padding: 2px;
+	color: #666;
+	font: normal 12px Georgia, serif;
+}
+
+.block .cloud { margin-left: 0; }
+.block .cloud li { display: inline; margin-right: 5px; line-height: 22px; }
+.block .cloud li a { text-decoration: none; white-space: nowrap; }
+.block .cloud li a.w1 { font-size: 12px; }
+.block .cloud li a.w2 { font-size: 12px; }
+.block .cloud li a.w3 { font-size: 14px; }
+.block .cloud li a.w4 { font-size: 14px; }
+.block .cloud li a.w5 { font-size: 18px; }
+.block .cloud li a.w6 { font-size: 18px; }
+.block .cloud li a.w7 { font-size: 20px; }
+.block .cloud li a.w8 { font-size: 20px; }
+.block .cloud li a.w9 { font-size: 22px; }
+.block .cloud li a.w10 { font-size: 22px; }
+
+.page-new { padding-left: 13px; background: url(../images/document.gif) no-repeat 0 3px; color: #555; }
+
+.input-wide { width: 98%; _width: 97%; padding: 2px; }
+.input-100 { width: 100px; padding: 2px; }
+.input-200 { width: 200px; padding: 2px; }
+.input-300 { width: 300px; padding: 2px; }
+.note { font-size: 12px; color: #aaa; }
+.checkbox { position: relative; top: 2px; margin: 0 4px 0 1px; }
