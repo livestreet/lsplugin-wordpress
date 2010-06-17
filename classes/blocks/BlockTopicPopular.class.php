@@ -20,12 +20,11 @@
  *
  */
 class PluginWordpress_BlockTopicPopular extends Block {
-	public function Exec() {
-		$sDate=date("Y-m-d H:00:00",time()-Config::Get('plugin.wordpress.block.topic_popular.time'));	
+	public function Exec() {		
 		/**
 		 * Получаем список топиков
 		 */			
-		$aTopics=$this->Topic_GetTopicsRatingByDate($sDate,Config::Get('plugin.wordpress.block.topic_popular.count'));
+		$aTopics=$this->PluginWordpress_Wp_GetTopicsByCountRead(Config::Get('plugin.wordpress.block.topic_popular.count'));
 		$this->Viewer_Assign('wp_aTopicsPopular',$aTopics);
 	}
 }

@@ -22,6 +22,7 @@ class PluginWordpress_HookWp extends Hook {
         $this->AddHook('module_topic_updatetopic_before', 'UpdateTopic');
         $this->AddHook('module_topic_addtopic_after', 'AddTopic');
         $this->AddHook('template_main_menu_tree','MenuTree');
+        $this->AddHook('topic_show','TopicShow');
     }
 
     public function InitAction() {    	
@@ -60,6 +61,12 @@ class PluginWordpress_HookWp extends Hook {
     	$aPages=$this->PluginPage_Page_GetPages(array('main'=>1,'active'=>1));		
 		$this->Viewer_Assign('aPagesMain',$aPages);
 		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'main_menu.tpl');
+    }
+    
+    public function TopicShow($aParams) {
+    	$oTopic=$aParams['oTopic'];
+    	$oTopic->setCountRead($oTopic->getCountRead()+1);
+    	$this->Topic_UpdateTopic($oTopic);
     }
 }
 ?>

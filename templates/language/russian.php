@@ -20,6 +20,12 @@
  */
 return array(
 	'wordpress_block_meta' => 'Meta',
+	'wordpress_block_meta_exit' => 'Выход',
+	'wordpress_block_meta_settings' => 'Настройки',
+	'wordpress_block_meta_messages' => 'Личные сообщения',
+	'wordpress_block_meta_topic_add' => 'Написать',
+	'wordpress_block_meta_registration' => 'Зарегистрироваться',
+	'wordpress_block_meta_login' => 'Войти',
 	'wordpress_block_topic_popular' => 'Популярные записи',
 	'wordpress_block_topic_last' => 'Последние записи',
 	'wordpress_block_blogs' => 'Категории',

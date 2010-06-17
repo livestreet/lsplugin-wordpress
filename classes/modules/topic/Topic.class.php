@@ -59,9 +59,6 @@ class PluginWordpress_ModuleTopic extends PluginWordpress_Inherit_ModuleTopic {
 		}
 		return $bResult;
 	}
-	
-	public function UpdateTopic33(ModuleTopic_EntityTopic $oTopic) {
-		$result=parent::UpdateTopic($oTopic);
-	}
+		
 }
 ?>

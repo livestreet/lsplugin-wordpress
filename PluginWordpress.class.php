@@ -47,22 +47,6 @@ class PluginWordpress extends Plugin {
 	 * Инициализация плагина
 	 */
 	public function Init() {
-		//$this->Viewer_ClearBlocks('right');
-		
-		$this->Viewer_AddBlock('right','Meta',array('plugin'=>'wordpress'),10);
-		$this->Viewer_AddBlock('right','TopicPopular',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','TopicLast',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','Blogs',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','Tags',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','CommentLast',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','UserAbout',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','Search',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','ContentAny',array('plugin'=>'wordpress','id'=>'test'),1);
-		$this->Viewer_AddBlock('right','Archive',array('plugin'=>'wordpress'),1);
-		$this->Viewer_AddBlock('right','Calendar',array('plugin'=>'wordpress'),1);
-		
-		
-		
 		$aPaths=glob(Plugin::GetPath(__CLASS__).'templates/skin/*',GLOB_ONLYDIR);		
 		/**
 		 * Подключает файл оформления дефолтного стиля

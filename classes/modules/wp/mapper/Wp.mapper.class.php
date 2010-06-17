@@ -61,6 +61,32 @@ class PluginWordpress_ModuleWp_MapperWp extends Mapper {
 		return $aTopics;
 	}
 	
+	public function GetTopicsByCountRead($aExcludeBlog,$iLimit) {
+		$sql = "				
+							SELECT 		
+								topic_id										
+							FROM 
+								".Config::Get('db.table.topic')."								
+							WHERE 								
+								topic_publish = 1
+								{ AND blog_id NOT IN (?a) }
+                            ORDER BY topic_count_read DESC	
+                            LIMIT 0, ?d ";
+		
+		$aTopics=array();
+		if ($aRows=$this->oDb->select(
+				$sql,
+				(is_array($aExcludeBlog)&&count($aExcludeBlog)) ? $aExcludeBlog : DBSIMPLE_SKIP,
+				$iLimit
+			)
+		) {
+			foreach ($aRows as $aTopic) {
+				$aTopics[]=$aTopic['topic_id'];
+			}
+		}
+		return $aTopics;
+	}
+	
 	public function GetContentById($sId) {
 		$sql = "SELECT * FROM ".Config::Get('plugin.wordpress.table.content')." WHERE id = ?d ";
 		if ($aRow=$this->oDb->selectRow($sql,$sId)) {

@@ -30,7 +30,6 @@ Config::Set('router.page.contentany', 'PluginWordpress_ActionContent');
  * Настройки блоков
  */
 $config['block']['topic_popular']['count']   = 15;  // Число записей в блоке популярных топиков
-$config['block']['topic_popular']['time']   = 60*60*24*30;  // Время за которое берутся популярные записи
 
 $config['block']['blogs']['count']   = 10;  // Число блогов в блоке "категории"
 
@@ -52,7 +51,29 @@ $config['archive']['per_page']   = 10;  // число топиков на стр
  * Очищает все дефолтные блоки
  */
 Config::Set('block', array());
-
+/**
+ * Определяем свои блоки
+ */
+Config::Set('block.wp_sidebar', array(
+	'path' => '.+',
+	'action' => array(),
+	'blocks'  => array(
+			'right' => array(
+				'Meta'=>array('priority'=>83,'params'=>array('plugin'=>'wordpress')),
+				'TopicPopular'=>array('priority'=>65,'params'=>array('plugin'=>'wordpress')),
+				'TopicLast'=>array('priority'=>75,'params'=>array('plugin'=>'wordpress')),
+				'Blogs'=>array('priority'=>85,'params'=>array('plugin'=>'wordpress')),
+				'Tags'=>array('priority'=>80,'params'=>array('plugin'=>'wordpress')),
+				'CommentLast'=>array('priority'=>-1,'params'=>array('plugin'=>'wordpress')),
+				'UserAbout'=>array('priority'=>70,'params'=>array('plugin'=>'wordpress')),
+				'Search'=>array('priority'=>100,'params'=>array('plugin'=>'wordpress')),
+				'ContentAny'=>array('priority'=>1,'params'=>array('plugin'=>'wordpress','id'=>'test')),
+				'Archive'=>array('priority'=>1,'params'=>array('plugin'=>'wordpress')),
+				'Calendar'=>array('priority'=>90,'params'=>array('plugin'=>'wordpress')),				
+			)
+		),
+	'clear' => true,
+));
 
 return $config;
 ?>

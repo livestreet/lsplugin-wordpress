@@ -55,6 +55,20 @@ class PluginWordpress_ModuleWp extends Module {
 		$data['collection']=$this->Topic_GetTopicsAdditionalData($data['collection']);
 		return $data;		
 	}
+	
+	public function GetTopicsByCountRead($iLimit,$bAddAccessible=true) {
+		$aCloseBlogs = ($this->oUserCurrent && $bAddAccessible) 
+			? $this->Blog_GetInaccessibleBlogsByUser($this->oUserCurrent)
+			: $this->Blog_GetInaccessibleBlogsByUser();
+			
+		$s = serialize($aCloseBlogs);
+		if (false === ($data = $this->Cache_Get("topic_count_read_{$iLimit}_{$s}"))) {			
+			$data = $this->oMapper->GetTopicsByCountRead($aExcludeBlog,$iLimit);
+			$this->Cache_Set($data, "topic_count_read_{$iLimit}_{$s}", array('topic_update','topic_new'), 60*60*24*5);
+		}
+		$data=$this->Topic_GetTopicsAdditionalData($data);
+		return $data;	
+	}
 	/**
 	 * Получает контент по ID
 	 *
