@@ -30,7 +30,7 @@ class PluginWordpress_BlockCalendar extends Block {
 		if ($iYear and $iMonth) {			
 			$iDate=mktime(0,0,0,$iMonth,1,$iYear);
 		} else {
-			$iDate=time();
+			$iDate=mktime(0,0,0,date("m"),1,date("Y"));
 		}
 		
 		/**
