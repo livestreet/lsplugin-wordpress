@@ -47,6 +47,8 @@ return array(
 	'wordpress_content' => 'Произвольные блоки контента',
 	'wordpress_content_field_id' => 'id',
 	'wordpress_content_field_name' => 'Название',
+	'wordpress_content_field_name_error' => 'Необходимо указать название контента, максимум 50 символов. Рекомендуем только на латинице и без пробелов.',
+	'wordpress_content_field_name_exists' => 'Контент с таким названием уже существует!',
 	'wordpress_content_field_title' => 'Заголовок',
 	'wordpress_content_field_php' => 'PHP',
 	'wordpress_content_field_content' => 'Контент',
@@ -54,11 +56,13 @@ return array(
 	'wordpress_content_action' => 'Действие',
 	'wordpress_content_action_edit' => 'Редактировать',
 	'wordpress_content_action_delete' => 'Удалить',
+	'wordpress_content_action_delete_ok' => 'Контент успешно удален.',
 	'wordpress_content_action_delete_confirm' => 'действительно удалить?',
 	'wordpress_content_action_add' => 'Добавить',
 	'wordpress_content_action_add_title' => 'Добавление контента',
 	'wordpress_content_action_edit_title' => 'Редактирование контента',
 	'wordpress_content_submit_save' => 'Сохранить',
+	'wordpress_content_submit_save_ok' => 'Контент успешно сохранен.',
 	'wordpress_content_submit_cancel' => 'Отмена',
 	
 	

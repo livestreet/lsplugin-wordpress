@@ -96,6 +96,39 @@ class PluginWordpress_ModuleWp extends Module {
 		return $this->oMapper->GetContents();
 	}
 	/**
+	 * Добавляет контент
+	 *
+	 * @param PluginWordpress_ModuleWp_EntityContent $oContent
+	 */
+	public function AddContent(PluginWordpress_ModuleWp_EntityContent $oContent) {
+		if ($iId=$this->oMapper->AddContent($oContent)) {
+			$oContent->setId($iId);
+			return $oContent;
+		}
+		return false;
+	}
+	/**
+	 * Обновляет контент
+	 *
+	 * @param PluginWordpress_ModuleWp_EntityContent $oContent
+	 */
+	public function UpdateContent(PluginWordpress_ModuleWp_EntityContent $oContent) {
+		$res=$this->oMapper->UpdateContent($oContent);
+		if ($res or $res===0) {			
+			return true;
+		}
+		return false;
+	}	
+	/**
+	 * Удаляет контент
+	 *
+	 * @param unknown_type $sContentId
+	 * @return unknown
+	 */
+	public function DeleteContent($sContentId) {
+		return $this->oMapper->DeleteContent($sContentId);
+	}
+	/**
 	 * Получает топик по его латинсокму названиею и дате
 	 *
 	 * @param string $sDate (Y-m-d)

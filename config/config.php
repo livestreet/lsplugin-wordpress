@@ -43,8 +43,11 @@ $config['block']['comment_last']['count']   = 10;  // Число записей 
 $config['block']['user_about']['id']   = 1;  // ID пользователя о котором нужно выводить информацию
 $config['block']['user_about']['show_mail']   = true;  // показывать или нет емайл
 
-
-$config['archive']['per_page']   = 10;  // число топиков на страницу в архиве
+/**
+ * Остальные настройки
+ */
+$config['archive']['per_page'] = 10;  // число топиков на страницу в архиве
+$config['topic']['can_add'] = 'admin';  // кто может добавлять топики: admin - только администраторы, user - все пользователи
 
 
 /**

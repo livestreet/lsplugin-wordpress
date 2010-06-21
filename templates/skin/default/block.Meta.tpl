@@ -4,7 +4,12 @@
 		<ul>
 			{if $oUserCurrent}
 				<li><a href="{$oUserCurrent->getUserWebPath()}" class="username">{$oUserCurrent->getLogin()}</a></li>
-				<li><a href="{router page='topic'}add/" class="create">{$aLang.wordpress_block_meta_topic_add}</a></li>
+				
+				{if $oConfig->GetValue('plugin.wordpress.topic.can_add')=='user' or $oUserCurrent->isAdministrator()}
+					<li><a href="{router page='topic'}add/" class="create">{$aLang.wordpress_block_meta_topic_add}</a></li>
+				{/if}
+				
+				
 				{if $iUserCurrentCountTalkNew}
 					<li><a href="{router page='talk'}" class="message-new" id="new_messages" title="{$aLang.wordpress_block_meta_messages}">{$aLang.wordpress_block_meta_messages} ({$iUserCurrentCountTalkNew})</a></li>
 				{else}

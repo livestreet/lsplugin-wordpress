@@ -44,7 +44,16 @@ class PluginWordpress_HookWp extends Hook {
     				}
     			}
     		}    		
-    	}    	
+    	}
+    	/**
+    	 * Проверяем возможность пользователю добавлять топики
+    	 */
+    	$oUserCurrent=$this->User_GetUserCurrent();
+    	if (in_array(Router::GetAction(),array('topic','question','link')) and Router::GetActionEvent()=='add') {
+    		if ($oUserCurrent and Config::get('plugin.wordpress.topic.can_add')=='admin' and !$oUserCurrent->isAdministrator()) {    			
+    			Router::Action('error','404');
+    		}
+    	}
     }
     
     public function UpdateTopic($aParams) {    	

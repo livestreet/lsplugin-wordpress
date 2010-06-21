@@ -118,6 +118,27 @@ class PluginWordpress_ModuleWp_MapperWp extends Mapper {
 		return $aCollection;
 	}
 	
+	public function AddContent(PluginWordpress_ModuleWp_EntityContent $oContent) {
+		$sql = "INSERT INTO  ".Config::Get('plugin.wordpress.table.content')." 
+			SET name = ?, title = ?, is_php = ?d, content = ? ";
+		if ($sId=$this->oDb->query($sql,$oContent->getName(),$oContent->getTitle(),$oContent->getIsPhp(),$oContent->getContent())) {
+			return $sId;
+		}
+		return false;
+	}
+	
+	public function UpdateContent(PluginWordpress_ModuleWp_EntityContent $oContent) {
+		$sql = "UPDATE  ".Config::Get('plugin.wordpress.table.content')." 
+			SET name = ?, title = ?, is_php = ?d, content = ? WHERE id = ?d ";
+		return $this->oDb->query($sql,$oContent->getName(),$oContent->getTitle(),$oContent->getIsPhp(),$oContent->getContent(),$oContent->getId());
+	}
+	
+	public function DeleteContent($sContentId) {
+		$sql = "DELETE FROM  ".Config::Get('plugin.wordpress.table.content')." 
+			 WHERE id = ?d ";
+		return $this->oDb->query($sql,$sContentId);
+	}
+	
 	public function GetTopicByDateAndTitleLat($sDate,$sTitle) {
 		$sql = "SELECT id FROM ".Config::Get('plugin.wordpress.table.topic')." WHERE date = ? and title_lat = ? limit 0,1";
 		if ($aRow=$this->oDb->selectRow($sql,$sDate,$sTitle)) {

@@ -25,7 +25,6 @@
 				
 	<input type="submit" name="submit_content_save" value="{$aLang.wordpress_content_submit_save}" />
 	<input type="submit" name="submit_content_cancel" value="{$aLang.wordpress_content_submit_cancel}" onclick="window.location='{router page='contentany'}'; return false;" />
-	
-	<input type="hidden" name="content_id" value="{$_aRequest.content_id}" />
+		
 </form>
 <br /><br />
