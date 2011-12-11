@@ -19,7 +19,7 @@
  * Запрещаем напрямую через браузер обращение к этому файлу.
  */
 if (!class_exists('Plugin')) {
-	die('Hacking attemp!');
+	die('Hacking attempt!');
 }
 
 class PluginWordpress extends Plugin {
@@ -29,6 +29,13 @@ class PluginWordpress extends Plugin {
        'entity'  =>array('ModuleTopic_EntityTopic'),       
 	);
 
+	public function __construct() {
+		parent::__construct();
+
+		$this->aDelegates=array(
+			'template'  =>array(Config::Get('path.root.server').'/plugins/page/templates/skin/default/actions/ActionPage/add.tpl'=>'_actions/ActionPage/add.tpl'),
+		);
+	}
 	
 	/**
 	 * Активация плагина	 

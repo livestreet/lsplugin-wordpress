@@ -26,6 +26,8 @@ return array(
 	'wordpress_block_meta_topic_add' => 'Write',
 	'wordpress_block_meta_registration' => 'Register',
 	'wordpress_block_meta_login' => 'Login',
+	'wordpress_block_meta_admin' => 'Admin panel',
+	'wordpress_block_meta_contentany' => 'Create block',
 	'wordpress_block_topic_popular' => 'Top Posts',
 	'wordpress_block_topic_last' => 'Last Posts',
 	'wordpress_block_blogs' => 'Categories',

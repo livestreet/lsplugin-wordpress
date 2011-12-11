@@ -1,5 +1,8 @@
 <?php
 
+if (!function_exists('func_translit')) {
+
+
 function func_translit($sText,$bLower=true) {  
     $aConverter=array(  
         'а' => 'a',   'б' => 'b',   'в' => 'v',  
@@ -41,5 +44,5 @@ function func_translit($sText,$bLower=true) {
     }
     return $sRes;
 }
-
+}
 ?>

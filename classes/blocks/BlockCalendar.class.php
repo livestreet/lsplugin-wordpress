@@ -23,10 +23,10 @@ class PluginWordpress_BlockCalendar extends Block {
 	public function Exec() {		
 		$oSmarty=$this->Viewer_GetSmartyObject();
 		
-		$iYear=$oSmarty->get_template_vars('wp_iYearArchive');
-		$iMonth=$oSmarty->get_template_vars('wp_iMonthArchive');
-		$iDay=$oSmarty->get_template_vars('wp_iDayArchive');
-		
+		$iYear=$oSmarty->getTemplateVars('wp_iYearArchive');
+		$iMonth=$oSmarty->getTemplateVars('wp_iMonthArchive');
+		$iDay=$oSmarty->getTemplateVars('wp_iDayArchive');
+
 		if ($iYear and $iMonth) {			
 			$iDate=mktime(0,0,0,$iMonth,1,$iYear);
 		} else {

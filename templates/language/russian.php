@@ -26,6 +26,8 @@ return array(
 	'wordpress_block_meta_topic_add' => 'Написать',
 	'wordpress_block_meta_registration' => 'Зарегистрироваться',
 	'wordpress_block_meta_login' => 'Войти',
+	'wordpress_block_meta_admin' => 'Админка',
+	'wordpress_block_meta_contentany' => 'Создать блок с контентом',
 	'wordpress_block_topic_popular' => 'Популярные записи',
 	'wordpress_block_topic_last' => 'Последние записи',
 	'wordpress_block_blogs' => 'Категории',

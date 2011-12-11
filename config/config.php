@@ -43,6 +43,8 @@ $config['block']['comment_last']['count']   = 10;  // Число записей 
 $config['block']['user_about']['id']   = 1;  // ID пользователя о котором нужно выводить информацию
 $config['block']['user_about']['show_mail']   = true;  // показывать или нет емайл
 
+$config['block']['content_any']['allow_php']   = false;  // разрешение на создание блока с PHP кодом
+
 /**
  * Остальные настройки
  */

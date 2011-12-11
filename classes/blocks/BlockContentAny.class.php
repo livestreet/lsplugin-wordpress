@@ -32,9 +32,9 @@ class PluginWordpress_BlockContentAny extends Block {
 		}
 		
 		if ($oContent) {			
-			if ($oContent->getIsPhp()) {
+			if ($oContent->getIsPhp() and Config::Get('plugin.wordpress.block.content_any.allow_php')) {
 				ob_start();
-				eval($oContent->getContent());
+				@eval($oContent->getContent());
 				$sContent=ob_get_contents();
 				ob_end_clean();
 			} else {

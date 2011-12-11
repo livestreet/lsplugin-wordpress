@@ -1,3 +1,12 @@
+{include file='window_load_img.tpl' sToLoad='content_content'}
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+	ls.lang.load({lang_load name="panel_b,panel_i,panel_u,panel_s,panel_url,panel_url_promt,panel_code,panel_video,panel_image,panel_cut,panel_quote,panel_list,panel_list_ul,panel_list_ol,panel_title,panel_clear_tags,panel_video_promt,panel_list_li"});
+	// Подключаем редактор
+	$('#content_content').markItUp(getMarkitupSettings());
+	});
+</script>
+
 <form action="" method="POST">
 	<input type="hidden" name="security_ls_key" value="{$LIVESTREET_SECURITY_KEY}" /> 
 
@@ -8,15 +17,7 @@
 	<input type="text" id="content_title" name="content_title" value="{$_aRequest.content_title}"  class="input-wide" /></p>
 											
 	<label for="content_content">{$aLang.wordpress_content_field_content}:</label>
-	<div class="panel-form">       	 
-		<a href="#" onclick="lsPanel.putTagAround('content_content','b'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/bold_ru.gif" width="20" height="20" title="{$aLang.panel_b}"></a>
-		<a href="#" onclick="lsPanel.putTagAround('content_content','i'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/italic_ru.gif" width="20" height="20" title="{$aLang.panel_i}"></a>	 			
-		<a href="#" onclick="lsPanel.putTagAround('content_content','u'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/underline_ru.gif" width="20" height="20" title="{$aLang.panel_u}"></a>	 			
-		<a href="#" onclick="lsPanel.putTagAround('content_content','s'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/strikethrough.gif" width="20" height="20" title="{$aLang.panel_s}"></a>	 			
-		&nbsp;
-		<a href="#" onclick="lsPanel.putTagUrl('content_content','URL'); return false;" class="button"><img src="{$sTemplateWebPathPlugin}images/panel/link.gif" width="20" height="20"  title="{$aLang.panel_url}"></a>
-	</div>
-	
+
 	<textarea name="content_content" id="content_content" rows="20" class="input-wide">{$_aRequest.content_content}</textarea>
 											
 	<p><label><input type="checkbox" id="content_is_php" name="content_is_php" value="1" {if $_aRequest.content_is_php==1}checked{/if} class="checkbox" />

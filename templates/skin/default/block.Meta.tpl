@@ -16,6 +16,10 @@
 					<li><a href="{router page='talk'}" id="new_messages">{$aLang.wordpress_block_meta_messages} ({$iUserCurrentCountTalkNew})</a></li>
 				{/if}
 				<li><a href="{router page='settings'}profile/">{$aLang.wordpress_block_meta_settings}</a></li>
+				{if $oUserCurrent->isAdministrator()}
+					<li><a href="{router page='admin'}">{$aLang.wordpress_block_meta_admin}</a></li>
+					<li><a href="{router page='contentany'}">{$aLang.wordpress_block_meta_contentany}</a></li>
+				{/if}
 				<li><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}">{$aLang.wordpress_block_meta_exit}</a></li>
 			{else}
 				<li><a href="{router page='registration'}">{$aLang.wordpress_block_meta_registration}</a></li>
